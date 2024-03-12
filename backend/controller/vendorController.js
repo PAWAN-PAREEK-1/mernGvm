@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const asyncHandler = require('express-async-handler')
 const User = require('../models/userModel');
 const Vendor = require('../models/vendorModel');
-const Product = require('../models/productModel');
+const Product = require('../models/productModel'); 
 
 
 // const vendorEmail = 'vendor@mail.com';
