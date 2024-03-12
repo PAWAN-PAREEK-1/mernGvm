@@ -1,0 +1,558 @@
+{
+	"info": {
+		"_postman_id": "bd5e185d-382b-418c-9755-eb379336adf4",
+		"name": "gvm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31781431"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "vendor2@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "admin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/vendor/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"vendor",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "add product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzOTk0NiwiZXhwIjoxNzEwNTk5OTQ2fQ.ZMX-4Ezq83M91jTwyk5OTzhEvfbadZ_YmZSbuTIGhUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "productName",
+											"value": "peracitamol",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "99",
+											"type": "text"
+										},
+										{
+											"key": "productType",
+											"value": "medical",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/vendor/product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"vendor",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getallproduct",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzOTk0NiwiZXhwIjoxNzEwNTk5OTQ2fQ.ZMX-4Ezq83M91jTwyk5OTzhEvfbadZ_YmZSbuTIGhUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/vendor/getproduct",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"vendor",
+										"getproduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "searchProduct",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzOTk0NiwiZXhwIjoxNzEwNTk5OTQ2fQ.ZMX-4Ezq83M91jTwyk5OTzhEvfbadZ_YmZSbuTIGhUc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/vendor/searchproduct?keyword=para",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"vendor",
+										"searchproduct"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "para"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateProduct",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "productType",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5001/api/user/getproduct/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"user",
+										"getproduct",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteProduct",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create-vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "vendor2@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "shopName",
+									"value": "toy",
+									"type": "text"
+								},
+								{
+									"key": "shopType",
+									"value": "retail",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/vendor/createvendor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"vendor",
+								"createvendor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfilevendor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzNTkxMywiZXhwIjoxNzEwMjM5NTEzfQ.5wbG9e_zypeUSZ76C4nJah4qW4i68GfXdgcYyYPYaME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/vendor/getVendor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"vendor",
+								"getVendor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateVendor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzNTkxMywiZXhwIjoxNzEwMjM5NTEzfQ.5wbG9e_zypeUSZ76C4nJah4qW4i68GfXdgcYyYPYaME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "shopName",
+									"value": "bazar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/vendor/update/65f01ff5895abc7b66f390d0?shopName",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"vendor",
+								"update",
+								"65f01ff5895abc7b66f390d0"
+							],
+							"query": [
+								{
+									"key": "shopName",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZlbmRvcjJAbWFpbC5jb20iLCJpZCI6IjY1ZjAxZmY1ODk1YWJjN2I2NmYzOTBkMCIsImlhdCI6MTcxMDIzNTkxMywiZXhwIjoxNzEwMjM5NTEzfQ.5wbG9e_zypeUSZ76C4nJah4qW4i68GfXdgcYyYPYaME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "oldPassword",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "admin2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/vendor/updatepassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"vendor",
+								"updatepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductOFallVendor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/user/getproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"getproduct"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user2@gmail.combbjbjh",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "user2@gmail.combbjbjh",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/user/getproduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"getproduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "serachProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIyQGdtYWlsLmNvbWJiamJqaCIsImlkIjoiNjVmMDM2OGEzMzRkZTY1NDQ3YmU5MDYzIiwidXNlcm5hbWUiOiJ1c2VyIiwiaWF0IjoxNzEwMjQyMzIyLCJleHAiOjE3MTA2MDIzMjJ9.0mWdjEv0PAsM6oDrj09qMIMKbymNgR7SZpqDnY_NG3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/user/searchproduct?keyword=pera",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"user",
+								"searchproduct"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "pera"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
